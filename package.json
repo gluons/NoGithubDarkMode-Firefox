@@ -1,12 +1,15 @@
 {
   "name": "no-github-darkmode-firefox",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Bring back the old GitHub menu bar.",
   "private": true,
   "scripts": {
-    "build": "web-ext build -s=\"./extension\"",
+    "build": "gulp sass",
+    "build:min": "gulp sass:min",
     "dev": "web-ext run -s=\"./extension\"",
-    "dev:ffdev": "npm run dev -- --firefox=\"C:\\Program Files\\Firefox Developer Edition\\firefox.exe\""
+    "dev:ffdev": "npm run dev -- --firefox=\"C:\\Program Files\\Firefox Developer Edition\\firefox.exe\"",
+    "lint": "web-ext lint -s=\"./extension\"",
+    "pack": "web-ext build -s=\"./extension\""
   },
   "repository": {
     "type": "git",
@@ -23,5 +26,11 @@
   "bugs": {
     "url": "https://github.com/gluons/NoGithubDarkMode-Firefox/issues"
   },
-  "homepage": "https://github.com/gluons/NoGithubDarkMode-Firefox"
+  "homepage": "https://github.com/gluons/NoGithubDarkMode-Firefox",
+  "devDependencies": {
+    "eslint": "^3.15.0",
+    "eslint-config-gluons": "^1.0.4",
+    "gulp": "^3.9.1",
+    "gulp-ruby-sass": "^2.1.1"
+  }
 }
