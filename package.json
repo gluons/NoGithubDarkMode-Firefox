@@ -1,0 +1,27 @@
+{
+  "name": "no-github-darkmode-firefox",
+  "version": "0.0.1",
+  "description": "Bring back the old GitHub menu bar.",
+  "private": true,
+  "scripts": {
+    "build": "web-ext build -s ./extension",
+    "dev": "web-ext run -s ./extension",
+    "dev:ffdev": "npm run dev -- --firefox=\"C:\\Program Files\\Firefox Developer Edition\\firefox.exe\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gluons/NoGithubDarkMode-Firefox.git"
+  },
+  "keywords": [
+    "firefox-addon",
+    "firefox",
+    "github",
+    "browser-extension"
+  ],
+  "author": "Saran Tanpituckpong <sarunta@gmail.com>",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/gluons/NoGithubDarkMode-Firefox/issues"
+  },
+  "homepage": "https://github.com/gluons/NoGithubDarkMode-Firefox"
+}
