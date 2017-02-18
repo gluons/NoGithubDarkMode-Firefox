@@ -1,11 +1,11 @@
 {
   "name": "no-github-darkmode-firefox",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Bring back the old GitHub menu bar.",
   "private": true,
   "scripts": {
-    "build": "web-ext build -s ./extension",
-    "dev": "web-ext run -s ./extension",
+    "build": "web-ext build -s=\"./extension\"",
+    "dev": "web-ext run -s=\"./extension\"",
     "dev:ffdev": "npm run dev -- --firefox=\"C:\\Program Files\\Firefox Developer Edition\\firefox.exe\""
   },
   "repository": {
