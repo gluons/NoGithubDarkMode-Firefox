@@ -13,8 +13,13 @@
 			border: 0 !important;
 		}
 	}
-	.nav-bar-title-text .octicon {
-		color: #555 !important;
+	.nav-bar-title-text {
+		.octicon {
+			color: #555 !important;
+		}
+		.text-white {
+			color: #555 !important;
+		}
 	}
 	.nav-bar-tabs {
 		background-color: white !important;

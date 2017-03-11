@@ -14,6 +14,9 @@
 .nav-bar .nav-bar-title-text .octicon {
   color: #555 !important;
 }
+.nav-bar .nav-bar-title-text .text-white {
+  color: #555 !important;
+}
 .nav-bar .nav-bar-tabs {
   background-color: white !important;
   border: 1px solid rgba(27, 31, 35, 0.15) !important;
