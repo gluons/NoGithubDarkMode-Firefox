@@ -24,6 +24,11 @@
 .nav-bar .nav-bar-tabs a {
   color: #24292E !important;
 }
+.nav-bar .header-notification-button .unread-notifications-indicator {
+  border-color: #f3f3f3 !important;
+  top: 8px;
+  right: 6px;
+}
 
 .reponav-wrapper {
   background-color: #F5F5F5 !important;

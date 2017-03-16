@@ -16,4 +16,14 @@ gulp.task('sass:min', () => {
 			.pipe(gulp.dest('./extension'));
 });
 
-gulp.task('default', ['sass']);
+gulp.task('watch:sass', () => {
+	return gulp.watch('./src/*.scss', ['sass']);
+});
+
+gulp.task('watch', ['watch:sass']);
+
+gulp.task('build', ['sass']);
+
+gulp.task('build:min', ['sass:min']);
+
+gulp.task('default', ['watch']);
