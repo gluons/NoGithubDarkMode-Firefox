@@ -20,8 +20,8 @@ const targetBrowsers = ['Firefox >= 48', 'FirefoxAndroid >= 48'];
 // Clean task
 gulp.task('clean', () => del(`${addonDistPath}/*`));
 
-// Manifest task
-gulp.task('manifest', () => gulp.src('./asset/manifest.json').pipe(gulp.dest(addonDistPath)));
+// Asset task
+gulp.task('asset', () => gulp.src(['./asset/**/*', '!./asset/**/*.svg']).pipe(gulp.dest(addonDistPath)));
 
 // JS task
 gulp.task('js', () => gulp.src(`${addonJSSrcPath}/*.js`).pipe(gulp.dest(`${addonDistPath}/content`)));
@@ -66,8 +66,8 @@ gulp.task('options', done => {
 });
 
 // Watch tasks
-gulp.task('watch:manifest', () => {
-	return gulp.watch('./asset/manifest.json', ['manifest']);
+gulp.task('watch:asset', () => {
+	return gulp.watch('./asset/**/*', ['asset']);
 });
 gulp.task('watch:js', () => {
 	return gulp.watch(`${addonJSSrcPath}/*.js`, ['js']);
@@ -78,11 +78,11 @@ gulp.task('watch:scss', () => {
 gulp.task('watch:options', () => {
 	return gulp.watch(['./src/view/*', './src/options.js'], ['options']);
 });
-gulp.task('watch', ['watch:manifest', 'watch:js', 'watch:scss', 'watch:options']);
+gulp.task('watch', ['watch:asset', 'watch:js', 'watch:scss', 'watch:options']);
 
 // Build tasks
-gulp.task('build', ['manifest', 'js', 'scss']);
-gulp.task('build:min', ['manifest', 'js:min', 'scss:min']);
+gulp.task('build', ['asset', 'js', 'scss']);
+gulp.task('build:min', ['asset', 'js:min', 'scss:min']);
 
 // Default task
 gulp.task('default', ['watch']);
