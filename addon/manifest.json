@@ -11,16 +11,36 @@
 	"author": "Saran Tanpituckpong",
 	"homepage_url": "https://github.com/gluons/NoGithubDarkMode-Firefox",
 	"permissions": [
+		"storage",
 		"https://github.com/*",
 		"https://gist.github.com/*"
 	],
 	"content_scripts": [
 		{
+			"matches":[
+				"https://github.com/features*",
+				"https://github.com/business*",
+				"https://github.com/trending*",
+				"https://github.com/explore*",
+				"https://github.com/marketplace*",
+				"https://github.com/pricing*"
+			],
+			"js": [
+				"./content/features.js"
+			]
+		},
+		{
 			"matches": [
 				"https://github.com/*",
 				"https://gist.github.com/*"
 			],
-			"css": ["NoDarkMode.css"]
+			"css": [
+				"./content/NoDarkMode.css"
+			]
 		}
-	]
+	],
+	"options_ui": {
+		"page": "options.html",
+		"browser_style": false
+	}
 }

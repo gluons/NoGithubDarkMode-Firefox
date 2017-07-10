@@ -2,6 +2,8 @@
  * GitHub Desktop Site
  */
 
+$pseudoPlaceholders: '-webkit-input-placeholder', '-moz-placeholder', '-ms-input-placeholder', 'placeholder';
+
 .header {
 	border-bottom: 1px solid #E5E5E5 !important;
 	background-color: #F5F5F5 !important;
@@ -70,21 +72,64 @@
 		min-height: 26px !important;
 		font-size: 14px !important;
 		color: #333 !important;
+
+		@each $pseudoPlaceholder in $pseudoPlaceholders {
+			&::#{$pseudoPlaceholder} {
+				color: #999 !important;
+			}
+		}
 	}
 }
 
-.header .header-search-input::-webkit-input-placeholder {
-	color: #999 !important;
-}
+.site-header.light {
+	border-bottom: 1px solid #E5E5E5 !important;
+	background-color: #F5F5F5 !important;
 
-.header .header-search-input::-moz-placeholder {
-	color: #999 !important;
-}
+	.octicon.octicon-mark-github {
+		color: #555 !important;
+	}
 
-.header .header-search-input:-ms-input-placeholder {
-	color: #999 !important;
-}
+	.site-header-nav {
+		.nav-item {
+			color: #555 !important;
 
-.header .header-search-input::placeholder {
-	color: #999 !important;
+			&:not(.selected) {
+				&::before {
+					content: '';
+					background-color: #6a737d;
+					position: absolute;
+					width: 100%;
+					height: 3px;
+					left: 0;
+					bottom: 0;
+					transform: scaleX(0);
+					transition: transform .3s ease-in-out 0s;
+				}
+				&:hover::before {
+					transform: scaleX(1);
+				}
+			}
+		}
+	}
+
+	.header-search-wrapper {
+		color: #333 !important;
+		background-color: #FFF !important;
+		border: 1px solid #DDD !important;
+		box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075) !important;
+	}
+
+	.header-search-input {
+		color: #333 !important;
+
+		@each $pseudoPlaceholder in $pseudoPlaceholders {
+			&::#{$pseudoPlaceholder} {
+				color: #999 !important;
+			}
+		}
+	}
+
+	.site-header-link {
+		color: #555 !important;
+	}
 }
