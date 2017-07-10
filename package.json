@@ -13,7 +13,8 @@
     "dev": "web-ext run -s=\"./addon\" --firefox=$FIREFOX_DEVELOPER_BIN",
     "prewatch": "npm-run-all build:unmin",
     "watch": "gulp watch",
-    "lint": "web-ext lint -s=\"./addon\"",
+    "lint": "eslint --ext .js,.vue .",
+    "lint:ff": "web-ext lint -s=\"./addon\"",
     "prepack": "gulp build",
     "pack": "web-ext build -s=\"./addon\""
   },
