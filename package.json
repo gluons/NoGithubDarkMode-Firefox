@@ -1,6 +1,6 @@
 {
   "name": "no-github-darkmode-firefox",
-  "version": "0.0.7",
+  "version": "1.0.0",
   "description": "Bring back the old GitHub menu bar.",
   "private": true,
   "scripts": {
