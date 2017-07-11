@@ -1,12 +1,16 @@
 /*
  * GitHub Mobile Site
  */
+
+$bg-color: #F5F5F5;
+$text-color: #555;
+
 .nav-bar {
-	background-color: #F5F5F5 !important;
-	color: #555 !important;
+	background-color: $bg-color !important;
+	color: $text-color !important;
 
 	.header-button {
-		color: #555 !important;
+		color: $text-color !important;
 
 		// Disable Firefox button outline
 		&::-moz-focus-inner {
@@ -15,10 +19,10 @@
 	}
 	.nav-bar-title-text {
 		.octicon {
-			color: #555 !important;
+			color: $text-color !important;
 		}
 		.text-white {
-			color: #555 !important;
+			color: $text-color !important;
 		}
 	}
 	.nav-bar-tabs {
@@ -37,10 +41,10 @@
 }
 
 .reponav-wrapper {
-	background-color: #F5F5F5 !important;
+	background-color: $bg-color !important;
 	border-bottom: 1px solid #E5E5E5 !important;
 
 	.reponav-item {
-		color: #555 !important;
+		color: $text-color !important;
 	}
 }

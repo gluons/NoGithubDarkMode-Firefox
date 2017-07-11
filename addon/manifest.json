@@ -1,0 +1,53 @@
+{
+	"name": "No GitHub Dark Mode",
+	"version": "1.0.0",
+	"description": "Bring back the old GitHub menu bar.",
+	"manifest_version": 2,
+	"applications": {
+		"gecko": {
+			"id": "no-github-dark-mode@gluons.github.io",
+			"strict_min_version": "48.0"
+		}
+	},
+	"author": "Saran Tanpituckpong",
+	"homepage_url": "https://github.com/gluons/NoGithubDarkMode-Firefox",
+	"icons": {
+		"48": "icon/github-48.png",
+		"96": "icon/github-96.png"
+	},
+	"permissions": [
+		"storage",
+		"https://github.com/*",
+		"https://gist.github.com/*"
+	],
+	"content_scripts": [
+		{
+			"matches":[
+				"https://github.com/stars*",
+				"https://github.com/features*",
+				"https://github.com/business*",
+				"https://github.com/trending*",
+				"https://github.com/showcases*",
+				"https://github.com/explore*",
+				"https://github.com/marketplace*",
+				"https://github.com/pricing*"
+			],
+			"js": [
+				"./content/features.js"
+			]
+		},
+		{
+			"matches": [
+				"https://github.com/*",
+				"https://gist.github.com/*"
+			],
+			"css": [
+				"./content/NoDarkMode.css"
+			]
+		}
+	],
+	"options_ui": {
+		"page": "options.html",
+		"browser_style": false
+	}
+}

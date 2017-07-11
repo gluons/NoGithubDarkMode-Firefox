@@ -1,5 +1,20 @@
 
-# Created by https://www.gitignore.io/api/node,sass,windows
+# Created by https://www.gitignore.io/api/node,sass,linux,windows
+
+### Linux ###
+*~
+
+# temporary files which can be created if a process still has a handle open of a deleted file
+.fuse_hidden*
+
+# KDE directory preferences
+.directory
+
+# Linux trash folder which might appear on any partition or disk
+.Trash-*
+
+# .nfs files are created when an open file is removed but is still being accessed
+.nfs*
 
 ### Node ###
 # Logs
@@ -87,7 +102,7 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.gitignore.io/api/node,sass,windows
+# End of https://www.gitignore.io/api/node,sass,linux,windows
 
 # Web Ext
 web-ext-artifacts/

@@ -1,0 +1,1 @@
+"use strict";var lightenHeader=function(){var e=document.querySelector(".site-header");e&&e.classList.add("light")};browser.storage.sync.get({enableOnFeaturesPage:!0}).then(function(e){e.enableOnFeaturesPage&&lightenHeader()}).catch(function(){lightenHeader()});

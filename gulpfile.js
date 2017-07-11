@@ -1,29 +1,88 @@
+/* eslint-disable arrow-body-style */
+
 const gulp = require('gulp');
-const sass = require('gulp-ruby-sass');
+const babel = require('gulp-babel');
 const concat = require('gulp-concat');
+const postcss = require('gulp-postcss');
+const sass = require('gulp-ruby-sass');
+const uglify = require('gulp-uglify');
 
-gulp.task('sass', () => {
-	return sass('./src/*.scss', { style: 'expanded' })
-			.on('error', sass.logError)
-			.pipe(concat('NoDarkMode.css'))
-			.pipe(gulp.dest('./extension'));
+const del = require('del');
+const spawn = require('cross-spawn');
+
+const addonJSSrcPath = './src/js/addon';
+const addonSCSSSrcPath = './src/scss/addon';
+const addonDistPath = './addon';
+const addonCssFileName = 'NoDarkMode.css';
+
+const targetBrowsers = ['Firefox >= 48', 'FirefoxAndroid >= 48'];
+
+// Clean task
+gulp.task('clean', () => del(`${addonDistPath}/*`));
+
+// Asset task
+gulp.task('asset', () => gulp.src(['./asset/**/*', '!./asset/**/*.svg']).pipe(gulp.dest(addonDistPath)));
+
+// JS task
+gulp.task('js', () => gulp.src(`${addonJSSrcPath}/*.js`).pipe(gulp.dest(`${addonDistPath}/content`)));
+gulp.task('js:min', () => {
+	return gulp.src(`${addonJSSrcPath}/*.js`)
+		.pipe(babel({
+			presets: [
+				['env', {
+					targets: {
+						browsers: targetBrowsers,
+						uglify: true
+					}
+				}]
+			]
+		}))
+		.pipe(uglify())
+		.pipe(gulp.dest(`${addonDistPath}/content`));
 });
 
-gulp.task('sass:min', () => {
-	return sass('./src/*.scss', { style: 'compressed' })
-			.on('error', sass.logError)
-			.pipe(concat('NoDarkMode.css'))
-			.pipe(gulp.dest('./extension'));
+// SCSS tasks
+gulp.task('scss', () => {
+	return sass(`${addonSCSSSrcPath}/*.scss`, { style: 'expanded' })
+		.on('error', sass.logError)
+		.pipe(concat(addonCssFileName))
+		.pipe(gulp.dest(`${addonDistPath}/content`));
+});
+gulp.task('scss:min', () => {
+	return sass(`${addonSCSSSrcPath}/*.scss`, { style: 'expanded' })
+		.on('error', sass.logError)
+		.pipe(concat(addonCssFileName))
+		.pipe(postcss())
+		.pipe(gulp.dest(`${addonDistPath}/content`));
 });
 
-gulp.task('watch:sass', () => {
-	return gulp.watch('./src/*.scss', ['sass']);
+// Options page tasks
+gulp.task('options', done => {
+	spawn.sync('npm', ['run', 'build:poi'], {
+		stdio: 'inherit'
+	});
+
+	done();
 });
 
-gulp.task('watch', ['watch:sass']);
+// Watch tasks
+gulp.task('watch:asset', () => {
+	return gulp.watch('./asset/**/*', ['asset']);
+});
+gulp.task('watch:js', () => {
+	return gulp.watch(`${addonJSSrcPath}/*.js`, ['js']);
+});
+gulp.task('watch:scss', () => {
+	return gulp.watch(`${addonSCSSSrcPath}/*.scss`, ['scss']);
+});
+gulp.task('watch:options', () => {
+	return gulp.watch(['./src/view/*', './src/options.js'], ['options']);
+});
+gulp.task('watch', ['watch:asset', 'watch:js', 'watch:scss', 'watch:options']);
 
-gulp.task('build', ['sass']);
+// Build tasks
+gulp.task('build', ['asset', 'js', 'scss']);
+gulp.task('build:min', ['asset', 'js:min', 'scss:min']);
 
-gulp.task('build:min', ['sass:min']);
-
+// Default task
 gulp.task('default', ['watch']);

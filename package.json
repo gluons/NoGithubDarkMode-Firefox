@@ -1,17 +1,22 @@
 {
   "name": "no-github-darkmode-firefox",
-  "version": "0.0.7",
+  "version": "1.0.0",
   "description": "Bring back the old GitHub menu bar.",
   "private": true,
   "scripts": {
-    "build": "gulp build",
-    "build:min": "gulp build:min",
-    "dev": "web-ext run -s=\"./extension\"",
-    "dev:ffdev": "npm run dev -- --firefox=\"C:\\Program Files\\Firefox Developer Edition\\firefox.exe\"",
+    "build": "npm-run-all build:min",
+    "build:unmin": "npm-run-all build:style build:poi",
+    "build:min": "npm-run-all build:style:min build:poi",
+    "build:style": "gulp clean && gulp build",
+    "build:style:min": "gulp clean && gulp build:min",
+    "build:poi": "poi build",
+    "dev": "web-ext run -s=\"./addon\" --firefox=$FIREFOX_DEVELOPER_BIN",
+    "prewatch": "npm-run-all build:unmin",
     "watch": "gulp watch",
-    "lint": "web-ext lint -s=\"./extension\"",
-    "prepack": "gulp build",
-    "pack": "web-ext build -s=\"./extension\""
+    "lint": "eslint --ext .js,.vue .",
+    "lint:ff": "web-ext lint -s=\"./addon\"",
+    "prepack": "npm run build",
+    "pack": "web-ext build -s=\"./addon\" --overwrite-dest"
   },
   "repository": {
     "type": "git",
@@ -24,16 +29,35 @@
     "browser-extension"
   ],
   "author": "Saran Tanpituckpong <sarunta@gmail.com>",
-  "license": "Unlicense",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/gluons/NoGithubDarkMode-Firefox/issues"
   },
   "homepage": "https://github.com/gluons/NoGithubDarkMode-Firefox",
   "devDependencies": {
-    "eslint": "^3.15.0",
-    "eslint-config-gluons": "^1.0.4",
+    "autoprefixer": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "cross-spawn": "^5.1.0",
+    "cross-var": "^1.0.3",
+    "cssnano": "^3.10.0",
+    "del": "^3.0.0",
+    "eslint": "^4.2.0",
+    "eslint-config-gluons": "^2.0.2",
+    "eslint-plugin-vue": "^2.1.0",
     "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
     "gulp-concat": "^2.6.1",
-    "gulp-ruby-sass": "^2.1.1"
+    "gulp-postcss": "^7.0.0",
+    "gulp-ruby-sass": "^2.1.1",
+    "gulp-uglify": "^3.0.0",
+    "node-sass": "^4.5.3",
+    "npm-run-all": "^4.0.2",
+    "poi": "^9.1.0",
+    "pug": "^2.0.0-rc.2",
+    "sass-loader": "^6.0.6"
+  },
+  "dependencies": {
+    "iview": "^2.0.0-rc.18",
+    "vue": "^2.3.4"
   }
 }
