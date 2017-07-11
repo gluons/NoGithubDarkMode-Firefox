@@ -2,28 +2,34 @@
  * GitHub Desktop Site
  */
 
-$pseudoPlaceholders: '-webkit-input-placeholder', '-moz-placeholder', '-ms-input-placeholder', 'placeholder';
+// Variables
+$text-color: #555;
+$text-input-color: #333;
+$link-color: #4078C0;
+$placeholder-color: #999;
+$pseudo-placeholders: '-webkit-input-placeholder', '-moz-placeholder', '-ms-input-placeholder', 'placeholder';
+$nav-item-underline-color: #6a737d;
 
 .header {
 	border-bottom: 1px solid #E5E5E5 !important;
 	background-color: #F5F5F5 !important;
 
 	.header-logo-invertocat, .header-logo-wordmark {
-		color: #555 !important;
+		color: $text-color !important;
 
 		&:hover {
-			color: #4078C0 !important;
+			color: $link-color !important;
 		}
 	}
 
 	.header-nav-link {
-		color: #555 !important;
+		color: $text-color !important;
 
 		&:hover, &:focus {
-			color: #4078c0 !important;
+			color: $link-color !important;
 
 			.dropdown-caret {
-				border-top-color: #4078c0 !important;
+				border-top-color: $link-color !important;
 			}
 		}
 	}
@@ -50,7 +56,7 @@ $pseudoPlaceholders: '-webkit-input-placeholder', '-moz-placeholder', '-ms-input
 	.header-search-wrapper {
 		min-height: 0 !important;
 		font-size: 14px !important;
-		color: #333 !important;
+		color: $text-input-color !important;
 		background-color: #FFF !important;
 		border: 1px solid #DDD !important;
 		box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075) !important;
@@ -61,7 +67,7 @@ $pseudoPlaceholders: '-webkit-input-placeholder', '-moz-placeholder', '-ms-input
 			border-color: #51A7E8 !important;
 
 			.header-search-scope {
-				color: #4078C0 !important;
+				color: $link-color !important;
 				background-color: #EDF2F9 !important;
 				border-right-color: #C6D7EC !important;
 			}
@@ -71,32 +77,37 @@ $pseudoPlaceholders: '-webkit-input-placeholder', '-moz-placeholder', '-ms-input
 	.header-search-input {
 		min-height: 26px !important;
 		font-size: 14px !important;
-		color: #333 !important;
+		color: $text-input-color !important;
 
-		@each $pseudoPlaceholder in $pseudoPlaceholders {
-			&::#{$pseudoPlaceholder} {
-				color: #999 !important;
+		@each $pseudo-placeholder in $pseudo-placeholders {
+			&::#{$pseudo-placeholder} {
+				color: $placeholder-color !important;
 			}
 		}
 	}
 }
 
+// For Features, Business, Explore, Marketplace, Pricing pages
 .site-header.light {
 	border-bottom: 1px solid #E5E5E5 !important;
 	background-color: #F5F5F5 !important;
 
 	.octicon.octicon-mark-github {
-		color: #555 !important;
+		color: $text-color !important;
 	}
 
 	.site-header-nav {
 		.nav-item {
-			color: #555 !important;
+			color: $text-color !important;
+
+			&.selected {
+				border-bottom-color: $nav-item-underline-color;
+			}
 
 			&:not(.selected) {
 				&::before {
 					content: '';
-					background-color: #6a737d;
+					background-color: $nav-item-underline-color;
 					position: absolute;
 					width: 100%;
 					height: 3px;
@@ -113,23 +124,23 @@ $pseudoPlaceholders: '-webkit-input-placeholder', '-moz-placeholder', '-ms-input
 	}
 
 	.header-search-wrapper {
-		color: #333 !important;
+		color: $text-input-color !important;
 		background-color: #FFF !important;
 		border: 1px solid #DDD !important;
 		box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075) !important;
 	}
 
 	.header-search-input {
-		color: #333 !important;
+		color: $text-input-color !important;
 
-		@each $pseudoPlaceholder in $pseudoPlaceholders {
-			&::#{$pseudoPlaceholder} {
-				color: #999 !important;
+		@each $pseudo-placeholder in $pseudo-placeholders {
+			&::#{$pseudo-placeholder} {
+				color: $placeholder-color !important;
 			}
 		}
 	}
 
 	.site-header-link {
-		color: #555 !important;
+		color: $text-color !important;
 	}
 }
