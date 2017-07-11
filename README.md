@@ -31,4 +31,4 @@ Go to https://addons.mozilla.org/en-US/firefox/addon/no-github-dark-mode/.
 2. Extract it.
 3. Go to `about:debugging#addons` in Firefox.
 4. Click on **Load Temporary Add-on**.
-5. Select `manifest.json` file in `./extension`.
+5. Select `manifest.json` file in `./addon`.
