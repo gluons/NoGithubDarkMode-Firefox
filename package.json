@@ -15,8 +15,8 @@
     "watch": "gulp watch",
     "lint": "eslint --ext .js,.vue .",
     "lint:ff": "web-ext lint -s=\"./addon\"",
-    "prepack": "gulp build",
-    "pack": "web-ext build -s=\"./addon\""
+    "prepack": "npm run build",
+    "pack": "web-ext build -s=\"./addon\" --overwrite-dest"
   },
   "repository": {
     "type": "git",
