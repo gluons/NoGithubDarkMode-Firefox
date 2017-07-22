@@ -16,26 +16,10 @@
 		"96": "icon/github-96.png"
 	},
 	"permissions": [
-		"storage",
 		"https://github.com/*",
 		"https://gist.github.com/*"
 	],
 	"content_scripts": [
-		{
-			"matches":[
-				"https://github.com/stars*",
-				"https://github.com/features*",
-				"https://github.com/business*",
-				"https://github.com/trending*",
-				"https://github.com/showcases*",
-				"https://github.com/explore*",
-				"https://github.com/marketplace*",
-				"https://github.com/pricing*"
-			],
-			"js": [
-				"./content/features.js"
-			]
-		},
 		{
 			"matches": [
 				"https://github.com/*",
@@ -43,12 +27,8 @@
 			],
 			"run_at": "document_start",
 			"css": [
-				"./content/NoDarkMode.css"
+				"./NoDarkMode.css"
 			]
 		}
-	],
-	"options_ui": {
-		"page": "options.html",
-		"browser_style": false
-	}
+	]
 }
