@@ -33,7 +33,7 @@
     "cross-var": "^1.0.3",
     "cssnano": "^3.10.0",
     "del": "^3.0.0",
-    "eslint": "^4.3.0",
+    "eslint": "^4.5.0",
     "eslint-config-gluons": "^2.0.2",
     "eslint-plugin-vue": "^2.1.0",
     "gulp": "^3.9.1",
@@ -41,7 +41,7 @@
     "gulp-postcss": "^7.0.0",
     "gulp-ruby-sass": "^2.1.1",
     "npm-run-all": "^4.0.2",
-    "pug": "^2.0.0-rc.2"
+    "pug": "^2.0.0-rc.3"
   },
   "dependencies": {}
 }

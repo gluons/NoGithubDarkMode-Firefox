@@ -11,7 +11,7 @@ $placeholder-color: #999;
 $pseudo-placeholders: '-webkit-input-placeholder', '-moz-placeholder', '-ms-input-placeholder', 'placeholder';
 $nav-item-underline-color: #6a737d;
 
-.header {
+.Header {
 	border-bottom: 1px solid #E5E5E5 !important;
 	background-color: #F5F5F5 !important;
 
@@ -24,7 +24,7 @@ $nav-item-underline-color: #6a737d;
 		}
 	}
 
-	.header-navlink {
+	.HeaderNavlink {
 		color: $text-color !important;
 		transition: color .2s ease-in-out 0s;
 
