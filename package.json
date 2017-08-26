@@ -7,8 +7,10 @@
     "build": "gulp build",
     "start": "cross-var web-ext run -s=\"./addon\" --firefox=$FIREFOX_DEVELOPER_BIN",
     "watch": "gulp watch",
-    "lint": "eslint .",
+    "lint:js": "eslint .",
     "lint:ff": "web-ext lint -s=\"./addon\"",
+    "lint": "npm-run-all -n lint:*",
+    "test": "npm run lint",
     "prepack": "npm run build",
     "pack": "web-ext build -s=\"./addon\" --overwrite-dest"
   },
