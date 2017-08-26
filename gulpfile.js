@@ -15,7 +15,7 @@ gulp.task('clean', () => del(`${addonDistPath}/*`));
 
 // Asset task
 gulp.task('asset', ['clean'], () => {
-	return gulp.src(['./asset/**/*', '!./asset/**/*.svg'])
+	return gulp.src(['./asset/**/*'])
 		.pipe(gulp.dest(addonDistPath));
 });
 
