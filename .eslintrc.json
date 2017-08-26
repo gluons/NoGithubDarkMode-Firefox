@@ -1,5 +1,5 @@
 {
-	"extends": "gluons/vue",
+	"extends": "gluons/es6",
 	"env": {
 		"webextensions": true
 	}
