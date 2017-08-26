@@ -39,7 +39,11 @@ $nav-item-underline-color: #6a737d;
 
 	.notification-indicator {
 		color: $text-color !important;
+		transition: color .2s ease-in-out 0s;
 
+		&:hover {
+			color: $link-color !important;
+		}
 		.mail-status {
 			border-color: #f3f3f3 !important;
 		}
