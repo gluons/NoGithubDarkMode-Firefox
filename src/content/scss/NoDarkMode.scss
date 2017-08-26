@@ -37,8 +37,12 @@ $nav-item-underline-color: #6a737d;
 		}
 	}
 
-	.notification-indicator .mail-status {
-		border-color: #f3f3f3 !important;
+	.notification-indicator {
+		color: $text-color !important;
+
+		.mail-status {
+			border-color: #f3f3f3 !important;
+		}
 	}
 
 	.header-search {
