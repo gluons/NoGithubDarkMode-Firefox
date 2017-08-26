@@ -5,7 +5,7 @@
 
 A Firefox add-on to change GitHub menu bar back to old color.
 
-Convert from [adamisntdead/NoGithubDarkMode](https://github.com/adamisntdead/NoGithubDarkMode).
+Forked from [adamisntdead/NoGithubDarkMode](https://github.com/adamisntdead/NoGithubDarkMode).
 
 ---
 
