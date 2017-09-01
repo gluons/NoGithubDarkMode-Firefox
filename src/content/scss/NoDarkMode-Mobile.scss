@@ -25,6 +25,14 @@ $text-color: #555;
 			color: $text-color !important;
 		}
 	}
+	.nav-bar-meta {
+		color: $text-color !important;
+
+		.fork-flag a.text-white {
+			color: #555 !important;
+			font-weight: bold !important;
+		}
+	}
 	.nav-bar-tabs {
 		background-color: white !important;
 		border: 1px solid rgba(27,31,35,0.15) !important;
