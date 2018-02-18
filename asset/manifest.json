@@ -1,6 +1,6 @@
 {
 	"name": "No GitHub Dark Mode",
-	"version": "1.2.1",
+	"version": "1.2.2",
 	"description": "Bring back the old GitHub menu bar.",
 	"manifest_version": 2,
 	"applications": {
