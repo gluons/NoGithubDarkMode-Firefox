@@ -12,9 +12,13 @@ $pseudo-placeholders: '-webkit-input-placeholder', '-moz-placeholder', '-ms-inpu
 $nav-item-underline-color: #6a737d;
 
 .Header {
+	color: $text-color !important;
 	border-bottom: 1px solid #E5E5E5 !important;
 	background-color: #F5F5F5 !important;
 
+	svg.octicon, .text-white {
+		color: $text-color !important;
+	}
 	.header-logo-invertocat, .header-logo-wordmark {
 		color: $text-color !important;
 		transition: color .2s ease-in-out 0s;

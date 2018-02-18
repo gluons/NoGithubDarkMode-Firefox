@@ -5,49 +5,6 @@
 $bg-color: #F5F5F5;
 $text-color: #555;
 
-.nav-bar {
-	background-color: $bg-color !important;
-	color: $text-color !important;
-
-	.header-button {
-		color: $text-color !important;
-
-		// Disable Firefox button outline
-		&::-moz-focus-inner {
-			border: 0 !important;
-		}
-	}
-	.nav-bar-title-text {
-		.octicon {
-			color: $text-color !important;
-		}
-		.text-white {
-			color: $text-color !important;
-		}
-	}
-	.nav-bar-meta {
-		color: $text-color !important;
-
-		.fork-flag a.text-white {
-			color: #555 !important;
-			font-weight: bold !important;
-		}
-	}
-	.nav-bar-tabs {
-		background-color: white !important;
-		border: 1px solid rgba(27,31,35,0.15) !important;
-
-		a {
-			color: #24292E !important;
-		}
-	}
-	.header-notification-button .unread-notifications-indicator {
-		border-color: #f3f3f3 !important;
-		top: 8px;
-		right: 6px;
-	}
-}
-
 .reponav-wrapper {
 	background-color: $bg-color !important;
 	border-bottom: 1px solid #E5E5E5 !important;

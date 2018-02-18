@@ -6,6 +6,7 @@
   "scripts": {
     "build": "gulp build",
     "start": "web-ext run -s=\"./addon\"",
+    "start:android": "web-ext run -s=\"./addon\" -t=firefox-android",
     "watch": "gulp watch",
     "lint:js": "eslint .",
     "lint:ff": "web-ext lint -s=\"./addon\"",
