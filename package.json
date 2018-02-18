@@ -32,7 +32,6 @@
   "homepage": "https://github.com/gluons/NoGithubDarkMode-Firefox",
   "devDependencies": {
     "autoprefixer": "^8.0.0",
-    "cross-var": "^1.0.3",
     "cssnano": "^3.10.0",
     "del": "^3.0.0",
     "eslint": "^4.5.0",
