@@ -23,7 +23,7 @@ $nav-item-underline-color: #6a737d;
 		color: $text-color !important;
 		transition: color .2s ease-in-out 0s;
 
-		&:hover {
+		&:hover, &:hover .octicon {
 			color: $link-color !important;
 		}
 	}
@@ -32,8 +32,15 @@ $nav-item-underline-color: #6a737d;
 		color: $text-color !important;
 		transition: color .2s ease-in-out 0s;
 
+		.text-white {
+			&:hover, &:focus {
+				color: $link-color !important;
+			}
+		}
 		&:hover, &:focus {
-			color: $link-color !important;
+			&, & .octicon {
+				color: $link-color !important;
+			}
 
 			.dropdown-caret {
 				border-top-color: $link-color !important;
@@ -45,7 +52,7 @@ $nav-item-underline-color: #6a737d;
 		color: $text-color !important;
 		transition: color .2s ease-in-out 0s;
 
-		&:hover {
+		&:hover .octicon {
 			color: $link-color !important;
 		}
 		.mail-status {
