@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "build": "gulp build",
-    "start": "cross-var web-ext run -s=\"./addon\" --firefox=$FIREFOX_DEVELOPER_BIN",
+    "start": "web-ext run -s=\"./addon\" -p=\"default\"",
     "watch": "gulp watch",
     "lint:js": "eslint .",
     "lint:ff": "web-ext lint -s=\"./addon\"",
@@ -41,7 +41,8 @@
     "gulp-concat": "^2.6.1",
     "gulp-postcss": "^7.0.0",
     "gulp-ruby-sass": "^3.0.0",
-    "npm-run-all": "^4.0.2"
+    "npm-run-all": "^4.0.2",
+    "web-ext": "^2.4.0"
   },
   "dependencies": {}
 }
