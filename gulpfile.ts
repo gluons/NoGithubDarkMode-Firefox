@@ -41,11 +41,15 @@ contentSCSSMin.displayName = 'content:scss:min';
 
 // Watch tasks
 export function watchAsset() {
+	asset();
+
 	return gWatch('./asset/**/*', asset);
 }
 watchAsset.displayName = 'watch:asset';
 
 export function watchContentSCSS() {
+	contentSCSS();
+
 	return gWatch('./src/content/scss/*.scss', contentSCSS);
 }
 watchContentSCSS.displayName = 'watch:content:scss';
