@@ -1,0 +1,10 @@
+{
+	"compilerOptions": {
+		"module": "commonjs",
+		"moduleResolution": "node",
+		"target": "es2015",
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"esModuleInterop": true
+	}
+}

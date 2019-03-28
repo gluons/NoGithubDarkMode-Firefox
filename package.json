@@ -33,6 +33,7 @@
   "homepage": "https://github.com/gluons/NoGithubDarkMode-Firefox",
   "devDependencies": {
     "@types/firefox-webext-browser": "^65.0.2",
+    "@types/gulp": "^4.0.6",
     "@types/node": "8",
     "autoprefixer": "^9.5.0",
     "cssnano": "^4.1.10",
@@ -45,6 +46,7 @@
     "gulp-ruby-sass": "^4.0.0",
     "npm-run-all": "^4.1.5",
     "ts-node": "^8.0.3",
+    "tslint-config-gluons": "^2.1.0",
     "typescript": "^3.3.4000",
     "web-ext": "^3.0.0"
   },
