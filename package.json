@@ -32,6 +32,7 @@
   },
   "homepage": "https://github.com/gluons/NoGithubDarkMode-Firefox",
   "devDependencies": {
+    "@types/firefox-webext-browser": "^65.0.2",
     "@types/node": "8",
     "autoprefixer": "^9.5.0",
     "cssnano": "^4.1.10",
