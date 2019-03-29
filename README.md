@@ -1,7 +1,7 @@
 # No GitHub Dark Mode for [Firefox](https://www.mozilla.org/firefox)
 [![license](https://img.shields.io/github/license/gluons/NoGithubDarkMode-Firefox.svg?style=flat-square)](https://github.com/gluons/NoGithubDarkMode-Firefox/blob/master/LICENSE)
 [![Mozilla Add-on](https://img.shields.io/amo/v/no-github-dark-mode.svg?style=flat-square)](https://addons.mozilla.org/en-US/firefox/addon/no-github-dark-mode/)
-[![ESLint Gluons](https://img.shields.io/badge/code%20style-gluons-9C27B0.svg?style=flat-square)](https://github.com/gluons/eslint-config-gluons)
+[![TSLint](https://img.shields.io/badge/TSLint-gluons-15757B.svg?style=flat-square)](https://github.com/gluons/tslint-config-gluons)
 
 A Firefox add-on to change GitHub menu bar back to old color.
 
