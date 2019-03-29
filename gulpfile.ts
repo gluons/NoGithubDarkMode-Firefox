@@ -1,14 +1,16 @@
-import gulp from 'gulp';
+import { dest, parallel, src, watch as gWatch } from 'gulp';
 import concat from 'gulp-concat';
 import postcss from 'gulp-postcss';
-import sass from 'gulp-ruby-sass';
+import sass from 'gulp-sass';
 
 import del from 'del';
-
-const { parallel, watch: gWatch } = gulp;
+import Fiber from 'fibers';
+import dartSass from 'sass';
 
 const addonDistPath = './addon';
 const addonCssFileName = 'NoDarkMode.css';
+
+sass.compiler = dartSass;
 
 // Clean task
 export function clean() {
@@ -17,25 +19,34 @@ export function clean() {
 
 // Asset task
 export function asset() {
-	return gulp.src('./asset/**/*')
-		.pipe(gulp.dest(addonDistPath));
+	return src('./asset/**/*').pipe(dest(addonDistPath));
 }
 
 // Content SCSS tasks
 export function contentSCSS() {
-	return sass('./src/content/scss/*.scss', { style: 'expanded' })
-		.on('error', sass.logError)
+	return src('./src/content/scss/*.scss')
+		.pipe(
+			sass({
+				fiber: Fiber,
+				outputStyle: 'expanded'
+			}).on('error', sass.logError)
+		)
 		.pipe(concat(addonCssFileName))
-		.pipe(gulp.dest(addonDistPath));
+		.pipe(dest(addonDistPath));
 }
 contentSCSS.displayName = 'content:scss';
 
 export function contentSCSSMin() {
-	return sass('./src/content/scss/*.scss', { style: 'expanded' })
-		.on('error', sass.logError)
+	return src('./src/content/scss/*.scss')
+		.pipe(
+			sass({
+				fiber: Fiber,
+				outputStyle: 'expanded'
+			}).on('error', sass.logError)
+		)
 		.pipe(concat(addonCssFileName))
 		.pipe(postcss())
-		.pipe(gulp.dest(addonDistPath));
+		.pipe(dest(addonDistPath));
 }
 contentSCSSMin.displayName = 'content:scss:min';
 
