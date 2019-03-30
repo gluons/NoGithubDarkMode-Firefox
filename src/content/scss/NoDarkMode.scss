@@ -27,6 +27,10 @@ header {
 		}
 	}
 
+	.text-white {
+		color: $text-color !important;
+	}
+
 	.HeaderMenu-link,
 	.HeaderNavlink {
 		color: $text-color !important;
