@@ -1,1 +1,2 @@
 addon/* linguist-generated=true
+*.config.js linguist-detectable=false
