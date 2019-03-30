@@ -1,6 +1,0 @@
-{
-	"extends": "gluons/esnext",
-	"env": {
-		"webextensions": true
-	}
-}
