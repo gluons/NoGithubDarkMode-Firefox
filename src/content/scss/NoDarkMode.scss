@@ -12,35 +12,28 @@ $pseudo-placeholders: '-webkit-input-placeholder', '-moz-placeholder',
 	'-ms-input-placeholder', 'placeholder';
 $nav-item-underline-color: #6a737d;
 
-.Header {
+header {
 	color: $text-color !important;
 	border-bottom: 1px solid #e5e5e5 !important;
 	background-color: #f5f5f5 !important;
 
-	svg.octicon,
-	.text-white {
-		color: $text-color !important;
-	}
-	.header-logo-invertocat,
-	.header-logo-wordmark {
+	svg.octicon.octicon-mark-github {
 		color: $text-color !important;
 		transition: color 0.2s ease-in-out 0s;
 
 		&:hover,
-		&:hover .octicon {
+		&:focus {
 			color: $link-color !important;
 		}
 	}
 
+	.HeaderMenu-link,
 	.HeaderNavlink {
 		color: $text-color !important;
 		transition: color 0.2s ease-in-out 0s;
 
-		.text-white {
-			&:hover,
-			&:focus {
-				color: $link-color !important;
-			}
+		.icon-chevon-down-mktg {
+			stroke: $text-color !important;
 		}
 		&:hover,
 		&:focus {
@@ -49,8 +42,8 @@ $nav-item-underline-color: #6a737d;
 				color: $link-color !important;
 			}
 
-			.dropdown-caret {
-				border-top-color: $link-color !important;
+			.icon-chevon-down-mktg {
+				stroke: $link-color !important;
 			}
 		}
 	}
@@ -67,34 +60,19 @@ $nav-item-underline-color: #6a737d;
 		}
 	}
 
-	.header-search {
-		font-size: 14px !important;
-	}
-
-	.form-control.header-search-wrapper {
-		line-height: 21px !important;
-	}
-
-	.header-search-scope {
-		font-size: 12px !important;
-		line-height: 20px !important;
-		color: #767676 !important;
-		border-right-color: #eee !important;
-	}
-
 	.header-search-wrapper {
 		min-height: 0 !important;
 		font-size: 14px !important;
 		color: $text-input-color !important;
 		background-color: #fff !important;
 		border: 1px solid #ddd !important;
-		box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075) !important;
+		box-shadow: inset 0 1px 2px rgba(27, 31, 35, 0.075) !important;
 
 		&.focus {
 			background-color: #fff !important;
 			box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075),
 				0 0 5px rgba(81, 167, 232, 0.5) !important;
-			border-color: #51a7e8 !important;
+			border-color: #2188ff !important;
 
 			.header-search-scope {
 				color: $link-color !important;
@@ -102,11 +80,13 @@ $nav-item-underline-color: #6a737d;
 				border-right-color: #c6d7ec !important;
 			}
 		}
+		.jump-to-suggestions {
+			border: 1px solid #2188ff !important;
+			box-sizing: content-box !important;
+		}
 	}
 
 	.header-search-input {
-		min-height: 26px !important;
-		font-size: 14px !important;
 		color: $text-input-color !important;
 
 		@each $pseudo-placeholder in $pseudo-placeholders {
@@ -114,5 +94,19 @@ $nav-item-underline-color: #6a737d;
 				color: $placeholder-color !important;
 			}
 		}
+	}
+}
+
+.page-responsive .HeaderMenu--logged-out .header-search-input {
+	@each $pseudo-placeholder in $pseudo-placeholders {
+		&::#{$pseudo-placeholder} {
+			color: $placeholder-color !important;
+		}
+	}
+}
+
+#user-links {
+	.Header-link {
+		color: $text-color !important;
 	}
 }
