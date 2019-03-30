@@ -3,10 +3,10 @@
 	"version": "1.2.2",
 	"description": "Bring back the old GitHub menu bar.",
 	"manifest_version": 2,
-	"applications": {
+	"browser_specific_settings": {
 		"gecko": {
 			"id": "no-github-dark-mode@gluons.github.io",
-			"strict_min_version": "48.0"
+			"strict_min_version": "52.0"
 		}
 	},
 	"author": "Saran Tanpituckpong",
