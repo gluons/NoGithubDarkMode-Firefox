@@ -2,20 +2,16 @@
  * GitHub Desktop Site
  */
 
+@import './colors';
+
 // Variables
-$text-color: #555;
-$text-input-color: #333;
-$link-color: #4078c0;
-$features-link-color: #777;
-$placeholder-color: #999;
 $pseudo-placeholders: '-webkit-input-placeholder', '-moz-placeholder',
 	'-ms-input-placeholder', 'placeholder';
-$nav-item-underline-color: #6a737d;
 
 header {
 	color: $text-color !important;
 	border-bottom: 1px solid #e5e5e5 !important;
-	background-color: #f5f5f5 !important;
+	background-color: $bg-color !important;
 
 	svg.octicon.octicon-mark-github {
 		color: $text-color !important;

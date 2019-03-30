@@ -2,8 +2,7 @@
  * GitHub Mobile Site
  */
 
-$bg-color: #f5f5f5;
-$text-color: #555;
+@import './colors';
 
 header {
 	.octicon {
