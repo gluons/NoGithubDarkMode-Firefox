@@ -108,5 +108,13 @@ header {
 #user-links {
 	.Header-link {
 		color: $text-color !important;
+
+		&:hover {
+			color: $link-color !important;
+
+			.octicon {
+				color: $link-color !important;
+			}
+		}
 	}
 }
