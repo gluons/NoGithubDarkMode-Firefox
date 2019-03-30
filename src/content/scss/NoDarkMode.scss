@@ -8,12 +8,14 @@
 $pseudo-placeholders: '-webkit-input-placeholder', '-moz-placeholder',
 	'-ms-input-placeholder', 'placeholder';
 
-header {
+header,
+.gist-header {
 	color: $text-color !important;
 	border-bottom: 1px solid #e5e5e5 !important;
 	background-color: $bg-color !important;
 
-	svg.octicon.octicon-mark-github {
+	svg.octicon.octicon-mark-github,
+	.header-logo-wordmark {
 		color: $text-color !important;
 		transition: color 0.2s ease-in-out 0s;
 
