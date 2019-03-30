@@ -49,6 +49,11 @@
     "@cliqz-oss/firefox-client" "0.3.1"
     es6-promise "^2.0.1"
 
+"@gluons/prettier-config@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.npmjs.org/@gluons/prettier-config/-/prettier-config-2.0.0.tgz#4afa561ccfaee4fdd8b4ed984bcbbd50770207d6"
+  integrity sha512-JFcGcVxJZsRENdmRXzthYSq0lFaWitQ150K3BW0nD7ye5n3hRNmS0tHaO/Sw+lxZTf3YL0i1CNbjI0Gf0Zl0UQ==
+
 "@types/events@*":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@types/events/-/events-3.0.0.tgz#2862f3f58a9a7f7c3e78d79f130dd4d71c25c2a7"
@@ -5246,6 +5251,11 @@ prepend-http@^1.0.1:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/prepend-http/-/prepend-http-1.0.4.tgz#d4f4562b0ce3696e41ac52d0e002e57a635dc6dc"
   integrity sha1-1PRWKwzjaW5BrFLQ4ALlemNdxtw=
+
+prettier@^1.16.4:
+  version "1.16.4"
+  resolved "https://registry.npmjs.org/prettier/-/prettier-1.16.4.tgz#73e37e73e018ad2db9c76742e2647e21790c9717"
+  integrity sha512-ZzWuos7TI5CKUeQAtFd6Zhm2s6EpAD/ZLApIhsF9pRvRtM1RFo61dM/4MSRUA0SuLugA/zgrZD8m0BaY46Og7g==
 
 pretty-hrtime@^1.0.0:
   version "1.0.3"
