@@ -4,17 +4,18 @@
   "description": "Bring back the old GitHub menu bar.",
   "private": true,
   "scripts": {
-    "build": "gulp build",
+    "compile": "gulp build",
+    "prebuild": "npm run compile",
+    "build": "web-ext build -s=\"./addon\" --overwrite-dest",
     "start": "web-ext run -s=\"./addon\"",
     "start:android": "web-ext run -s=\"./addon\" -t=firefox-android",
     "watch": "gulp watch",
     "lint:ts": "tslint -p . *.ts",
     "lint:ff": "addons-linter ./addon",
+    "prelint": "npm run compile",
     "lint": "npm-run-all -n lint:*",
     "format": "prettier --write \"{src/**,gulpfile.ts,asset/**/*.json}\"",
-    "test": "npm run lint",
-    "prepack": "npm run build",
-    "pack": "web-ext build -s=\"./addon\" --overwrite-dest"
+    "test": "npm run lint"
   },
   "repository": {
     "type": "git",
