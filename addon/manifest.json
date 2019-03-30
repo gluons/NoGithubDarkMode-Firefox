@@ -15,20 +15,12 @@
 		"48": "icon/github-logo.svg",
 		"96": "icon/github-logo.svg"
 	},
-	"permissions": [
-		"https://github.com/*",
-		"https://gist.github.com/*"
-	],
+	"permissions": ["https://github.com/*", "https://gist.github.com/*"],
 	"content_scripts": [
 		{
-			"matches": [
-				"https://github.com/*",
-				"https://gist.github.com/*"
-			],
+			"matches": ["https://github.com/*", "https://gist.github.com/*"],
 			"run_at": "document_start",
-			"css": [
-				"./NoDarkMode.css"
-			]
+			"css": ["./NoDarkMode.css"]
 		}
 	]
 }
