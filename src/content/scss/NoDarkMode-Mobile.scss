@@ -8,15 +8,6 @@ header {
 	.octicon {
 		color: $text-color !important;
 	}
-
-	button.btn-link.js-details-target,
-	details.details-reset {
-		&:hover {
-			.octicon-three-bars {
-				color: #4078c0 !important;
-			}
-		}
-	}
 }
 
 .reponav-wrapper {
