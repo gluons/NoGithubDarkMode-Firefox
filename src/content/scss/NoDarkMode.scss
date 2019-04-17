@@ -29,6 +29,18 @@ header,
 		color: $text-color !important;
 	}
 
+	.Header-link {
+		color: $text-color !important;
+
+		&:hover {
+			color: $link-color !important;
+
+			.octicon {
+				color: $link-color !important;
+			}
+		}
+	}
+
 	.HeaderMenu-link,
 	.HeaderNavlink {
 		color: $text-color !important;
@@ -103,20 +115,6 @@ header,
 	@each $pseudo-placeholder in $pseudo-placeholders {
 		&::#{$pseudo-placeholder} {
 			color: $placeholder-color !important;
-		}
-	}
-}
-
-#user-links {
-	.Header-link {
-		color: $text-color !important;
-
-		&:hover {
-			color: $link-color !important;
-
-			.octicon {
-				color: $link-color !important;
-			}
 		}
 	}
 }
